@@ -1,0 +1,6 @@
+﻿Transaction ID,Application Date,Approval date,Type of Loan,Customer ID,Branch ID,Loan Amount,Term of Loan,Interest rate,Lead source
+789,30-12-2016,17-01-2017,Gold Loan,CJ-11875,OFF-AR-10004269,42610,1,8.7,Walk-in
+790,11-12-2017,29-12-2017,Personal Loan,RS-19870,OFF-EN-10003160,122438,30,11,Website
+791,11-11-2016,30-11-2016,Home Loan,SC-20845,OFF-AR-10003394,887488,5,10.4,Walk-in
+792,29-12-2014,15-01-2015,Personal Loan,RE-19405,OFF-AP-10003281,115231,5,8.2,Referral
+793,03-05-2016,20-05-2016,Gold Loan,SM-20905,TEC-AC-10003832,125042,10,16.5,Referral
