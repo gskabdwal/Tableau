@@ -1,0 +1,2607 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Loan transactions Data.csv++ (Multiple Connections)' inline='true' name='federated.07tfyxy132tjev1ae4rz60n9lxxt' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Customer Data' name='excel-direct.1csmkhk0qsuwfm13wpin41mjliqt'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/HP/OneDrive/Desktop/Tableau/Tableau Data/Finance Data/Customer Data.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='Branch Data' name='textscan.0atudkv1tb2dtu1bucgj91h2uyjf'>
+            <connection class='textscan' directory='C:/Users/HP/OneDrive/Desktop/Tableau/Tableau Data/Finance Data' filename='Branch Data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation all='true' name='Loan transactions Data.csv+' type='union'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='Transaction ID' />
+              <column datatype='date' name='Application Date' />
+              <column datatype='date' name='Approval date' />
+              <column datatype='string' name='Type of Loan' />
+              <column datatype='string' name='Customer ID' />
+              <column datatype='string' name='Branch ID' />
+              <column datatype='integer' name='Loan Amount' />
+              <column datatype='integer' name='Term of Loan' />
+              <column datatype='real' name='Interest rate' />
+              <column datatype='string' name='Lead source' />
+              <column datatype='string' name='Table Name' />
+            </columns>
+            <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='Loan transactions Data.csv' table='[Loan transactions Data#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                <column datatype='integer' name='Transaction ID' ordinal='0' />
+                <column datatype='date' name='Application Date' ordinal='1' />
+                <column datatype='date' name='Approval date' ordinal='2' />
+                <column datatype='string' name='Type of Loan' ordinal='3' />
+                <column datatype='string' name='Customer ID' ordinal='4' />
+                <column datatype='string' name='Branch ID' ordinal='5' />
+                <column datatype='integer' name='Loan Amount' ordinal='6' />
+                <column datatype='integer' name='Term of Loan' ordinal='7' />
+                <column datatype='real' name='Interest rate' ordinal='8' />
+                <column datatype='string' name='Lead source' ordinal='9' />
+              </columns>
+            </relation>
+            <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='bug loan transactions.csv' table='[bug loan transactions#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                <column datatype='integer' name='Transaction ID' ordinal='0' />
+                <column datatype='date' name='Application Date' ordinal='1' />
+                <column datatype='date' name='Approval date' ordinal='2' />
+                <column datatype='string' name='Type of Loan' ordinal='3' />
+                <column datatype='string' name='Customer ID' ordinal='4' />
+                <column datatype='string' name='Branch ID' ordinal='5' />
+                <column datatype='integer' name='Loan Amount' ordinal='6' />
+                <column datatype='integer' name='Term of Loan' ordinal='7' />
+                <column datatype='real' name='Interest rate' ordinal='8' />
+                <column datatype='string' name='Lead source' ordinal='9' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='Branch Data.csv' table='[Branch Data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='Branch ID' ordinal='0' />
+              <column datatype='integer' name='Employee Count' ordinal='1' />
+              <column datatype='string' name='Type of Branch' ordinal='2' />
+              <column datatype='string' name='Location type' ordinal='3' />
+              <column datatype='string' name='Region' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1csmkhk0qsuwfm13wpin41mjliqt' name='Customer Data' table='[&apos;Customer Data$&apos;]' type='table'>
+            <columns gridOrigin='A1:I794:no:A1:I794:0' header='yes' outcome='6'>
+              <column datatype='string' name='Customer ID' ordinal='0' />
+              <column datatype='string' name='Customer Name' ordinal='1' />
+              <column datatype='string' name='Marital Status' ordinal='2' />
+              <column datatype='integer' name='Age' ordinal='3' />
+              <column datatype='integer' name='Number of dependents' ordinal='4' />
+              <column datatype='string' name='Home City' ordinal='5' />
+              <column datatype='string' name='Home State' ordinal='6' />
+              <column datatype='integer' name='Postal Code' ordinal='7' />
+              <column datatype='string' name='Risk Level' ordinal='8' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Age]' value='[Customer Data].[Age]' />
+          <map key='[Application Date]' value='[Loan transactions Data.csv+].[Application Date]' />
+          <map key='[Approval date]' value='[Loan transactions Data.csv+].[Approval date]' />
+          <map key='[Branch ID (Branch Data.csv)]' value='[Branch Data.csv].[Branch ID]' />
+          <map key='[Branch ID]' value='[Loan transactions Data.csv+].[Branch ID]' />
+          <map key='[Customer ID (Customer Data)]' value='[Customer Data].[Customer ID]' />
+          <map key='[Customer ID]' value='[Loan transactions Data.csv+].[Customer ID]' />
+          <map key='[Customer Name]' value='[Customer Data].[Customer Name]' />
+          <map key='[Employee Count]' value='[Branch Data.csv].[Employee Count]' />
+          <map key='[Home City]' value='[Customer Data].[Home City]' />
+          <map key='[Home State]' value='[Customer Data].[Home State]' />
+          <map key='[Interest rate]' value='[Loan transactions Data.csv+].[Interest rate]' />
+          <map key='[Lead source]' value='[Loan transactions Data.csv+].[Lead source]' />
+          <map key='[Loan Amount]' value='[Loan transactions Data.csv+].[Loan Amount]' />
+          <map key='[Location type]' value='[Branch Data.csv].[Location type]' />
+          <map key='[Marital Status]' value='[Customer Data].[Marital Status]' />
+          <map key='[Number of dependents]' value='[Customer Data].[Number of dependents]' />
+          <map key='[Postal Code]' value='[Customer Data].[Postal Code]' />
+          <map key='[Region]' value='[Branch Data.csv].[Region]' />
+          <map key='[Risk Level]' value='[Customer Data].[Risk Level]' />
+          <map key='[Table Name]' value='[Loan transactions Data.csv+].[Table Name]' />
+          <map key='[Term of Loan]' value='[Loan transactions Data.csv+].[Term of Loan]' />
+          <map key='[Transaction ID]' value='[Loan transactions Data.csv+].[Transaction ID]' />
+          <map key='[Type of Branch]' value='[Branch Data.csv].[Type of Branch]' />
+          <map key='[Type of Loan]' value='[Loan transactions Data.csv+].[Type of Loan]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I794:no:A1:I794:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Transaction ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Transaction ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Application Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Application Date]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Application Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Approval date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Approval date]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Approval date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type of Loan</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type of Loan]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Type of Loan</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Branch ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Branch ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Branch ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Loan Amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Loan Amount]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Loan Amount</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Term of Loan</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Term of Loan]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Term of Loan</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Interest rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Interest rate]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Interest rate</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lead source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Lead source]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Lead source</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Branch ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Branch ID (Branch Data.csv)]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Branch ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employee Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Employee Count]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Employee Count</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type of Branch</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type of Branch]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Type of Branch</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location type]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Location type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer ID (Customer Data)]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer Name]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Customer Name</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Marital Status</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Marital Status]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Marital Status</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of dependents</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of dependents]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Number of dependents</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Home City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Home City]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Home City</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Home State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Home State]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Home State</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Postal Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Postal Code]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Postal Code</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Risk Level</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Risk Level]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Risk Level</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Home City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Home State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Postal Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column datatype='integer' name='[Transaction ID]' role='dimension' type='ordinal' />
+      <column caption='Branch Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]' role='measure' type='quantitative' />
+      <column caption='Customer Data' datatype='table' name='[__tableau_internal_object_id__].[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]' role='measure' type='quantitative' />
+      <column caption='Loan transactions Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_1t2v4q40ervd0r173978s1mv7nl4.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/09/2024 11:26:27 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE' table='[Extract].[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]' type='table' />
+            <relation name='Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C' table='[Extract].[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]' type='table' />
+            <relation name='Customer Data_9D48EF7BACC74AB28C6DEA859B052F43' table='[Extract].[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]' type='table' />
+          </relation>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Branch Data.csv' id='Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C'>
+            <properties context=''>
+              <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='Branch Data.csv' table='[Branch Data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Branch ID' ordinal='0' />
+                  <column datatype='integer' name='Employee Count' ordinal='1' />
+                  <column datatype='string' name='Type of Branch' ordinal='2' />
+                  <column datatype='string' name='Location type' ordinal='3' />
+                  <column datatype='string' name='Region' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C' table='[Extract].[Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C]' type='table' />
+            </properties>
+          </object>
+          <object caption='Customer Data' id='Customer Data_9D48EF7BACC74AB28C6DEA859B052F43'>
+            <properties context=''>
+              <relation connection='excel-direct.1csmkhk0qsuwfm13wpin41mjliqt' name='Customer Data' table='[&apos;Customer Data$&apos;]' type='table'>
+                <columns gridOrigin='A1:I794:no:A1:I794:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Customer ID' ordinal='0' />
+                  <column datatype='string' name='Customer Name' ordinal='1' />
+                  <column datatype='string' name='Marital Status' ordinal='2' />
+                  <column datatype='integer' name='Age' ordinal='3' />
+                  <column datatype='integer' name='Number of dependents' ordinal='4' />
+                  <column datatype='string' name='Home City' ordinal='5' />
+                  <column datatype='string' name='Home State' ordinal='6' />
+                  <column datatype='integer' name='Postal Code' ordinal='7' />
+                  <column datatype='string' name='Risk Level' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Customer Data_9D48EF7BACC74AB28C6DEA859B052F43' table='[Extract].[Customer Data_9D48EF7BACC74AB28C6DEA859B052F43]' type='table' />
+            </properties>
+          </object>
+          <object caption='Loan transactions Data.csv' id='Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE'>
+            <properties context=''>
+              <relation all='true' name='Loan transactions Data.csv+' type='union'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='Transaction ID' />
+                  <column datatype='date' name='Application Date' />
+                  <column datatype='date' name='Approval date' />
+                  <column datatype='string' name='Type of Loan' />
+                  <column datatype='string' name='Customer ID' />
+                  <column datatype='string' name='Branch ID' />
+                  <column datatype='integer' name='Loan Amount' />
+                  <column datatype='integer' name='Term of Loan' />
+                  <column datatype='real' name='Interest rate' />
+                  <column datatype='string' name='Lead source' />
+                  <column datatype='string' name='Table Name' />
+                </columns>
+                <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='Loan transactions Data.csv' table='[Loan transactions Data#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='integer' name='Transaction ID' ordinal='0' />
+                    <column datatype='date' name='Application Date' ordinal='1' />
+                    <column datatype='date' name='Approval date' ordinal='2' />
+                    <column datatype='string' name='Type of Loan' ordinal='3' />
+                    <column datatype='string' name='Customer ID' ordinal='4' />
+                    <column datatype='string' name='Branch ID' ordinal='5' />
+                    <column datatype='integer' name='Loan Amount' ordinal='6' />
+                    <column datatype='integer' name='Term of Loan' ordinal='7' />
+                    <column datatype='real' name='Interest rate' ordinal='8' />
+                    <column datatype='string' name='Lead source' ordinal='9' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.0atudkv1tb2dtu1bucgj91h2uyjf' name='bug loan transactions.csv' table='[bug loan transactions#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='integer' name='Transaction ID' ordinal='0' />
+                    <column datatype='date' name='Application Date' ordinal='1' />
+                    <column datatype='date' name='Approval date' ordinal='2' />
+                    <column datatype='string' name='Type of Loan' ordinal='3' />
+                    <column datatype='string' name='Customer ID' ordinal='4' />
+                    <column datatype='string' name='Branch ID' ordinal='5' />
+                    <column datatype='integer' name='Loan Amount' ordinal='6' />
+                    <column datatype='integer' name='Term of Loan' ordinal='7' />
+                    <column datatype='real' name='Interest rate' ordinal='8' />
+                    <column datatype='string' name='Lead source' ordinal='9' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE' table='[Extract].[Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Branch ID]' />
+              <expression op='[Branch ID (Branch Data.csv)]' />
+            </expression>
+            <first-end-point object-id='Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE' />
+            <second-end-point object-id='Branch Data.csv_963A92694D814525BBE1F3D5BA089A9C' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[Customer ID]' />
+              <expression op='[Customer ID (Customer Data)]' />
+            </expression>
+            <first-end-point object-id='Loan transactions Data.csv_6A3D23AB91C44EFD956E08A6E4A8F5FE' />
+            <second-end-point object-id='Customer Data_9D48EF7BACC74AB28C6DEA859B052F43' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='Loan transactions Data.csv++ (Multiple Connections) (2)' inline='true' name='federated.0l2dp1z0k8n3hk1bapiik0vqcxe3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Loan transactions Data' name='textscan.0h1q90414rne3l197f2vj17hdivp'>
+            <connection class='textscan' directory='C:/Users/HP/OneDrive/Desktop/Tableau/GitHub/Data/Finance Data' filename='Loan transactions Data.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Customer Data' name='excel-direct.0vx351l1xwrzzy0zyklqm1lghvbc'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/HP/OneDrive/Desktop/Tableau/GitHub/Data/Finance Data/Customer Data.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation all='true' name='Loan transactions Data.csv+' type='union'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='Transaction ID' />
+              <column datatype='date' name='Application Date' />
+              <column datatype='date' name='Approval date' />
+              <column datatype='string' name='Type of Loan' />
+              <column datatype='string' name='Customer ID' />
+              <column datatype='string' name='Branch ID' />
+              <column datatype='integer' name='Loan Amount' />
+              <column datatype='integer' name='Term of Loan' />
+              <column datatype='real' name='Interest rate' />
+              <column datatype='string' name='Lead source' />
+              <column datatype='string' name='Table Name' />
+            </columns>
+            <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='Loan transactions Data.csv' table='[Loan transactions Data#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                <column datatype='integer' name='Transaction ID' ordinal='0' />
+                <column datatype='date' name='Application Date' ordinal='1' />
+                <column datatype='date' name='Approval date' ordinal='2' />
+                <column datatype='string' name='Type of Loan' ordinal='3' />
+                <column datatype='string' name='Customer ID' ordinal='4' />
+                <column datatype='string' name='Branch ID' ordinal='5' />
+                <column datatype='integer' name='Loan Amount' ordinal='6' />
+                <column datatype='integer' name='Term of Loan' ordinal='7' />
+                <column datatype='real' name='Interest rate' ordinal='8' />
+                <column datatype='string' name='Lead source' ordinal='9' />
+              </columns>
+            </relation>
+            <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='bug loan transactions.csv' table='[bug loan transactions#csv]' type='table'>
+              <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                <column datatype='integer' name='Transaction ID' ordinal='0' />
+                <column datatype='date' name='Application Date' ordinal='1' />
+                <column datatype='date' name='Approval date' ordinal='2' />
+                <column datatype='string' name='Type of Loan' ordinal='3' />
+                <column datatype='string' name='Customer ID' ordinal='4' />
+                <column datatype='string' name='Branch ID' ordinal='5' />
+                <column datatype='integer' name='Loan Amount' ordinal='6' />
+                <column datatype='integer' name='Term of Loan' ordinal='7' />
+                <column datatype='real' name='Interest rate' ordinal='8' />
+                <column datatype='string' name='Lead source' ordinal='9' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='Branch Data.csv' table='[Branch Data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='Branch ID' ordinal='0' />
+              <column datatype='integer' name='Employee Count' ordinal='1' />
+              <column datatype='string' name='Type of Branch' ordinal='2' />
+              <column datatype='string' name='Location type' ordinal='3' />
+              <column datatype='string' name='Region' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.0vx351l1xwrzzy0zyklqm1lghvbc' name='Customer Data' table='[&apos;Customer Data$&apos;]' type='table'>
+            <columns gridOrigin='A1:I794:no:A1:I794:0' header='yes' outcome='6'>
+              <column datatype='string' name='Customer ID' ordinal='0' />
+              <column datatype='string' name='Customer Name' ordinal='1' />
+              <column datatype='string' name='Marital Status' ordinal='2' />
+              <column datatype='integer' name='Age' ordinal='3' />
+              <column datatype='integer' name='Number of dependents' ordinal='4' />
+              <column datatype='string' name='Home City' ordinal='5' />
+              <column datatype='string' name='Home State' ordinal='6' />
+              <column datatype='integer' name='Postal Code' ordinal='7' />
+              <column datatype='string' name='Risk Level' ordinal='8' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Age]' value='[Customer Data].[Age]' />
+          <map key='[Application Date]' value='[Loan transactions Data.csv+].[Application Date]' />
+          <map key='[Approval date]' value='[Loan transactions Data.csv+].[Approval date]' />
+          <map key='[Branch ID (Branch Data.csv)]' value='[Branch Data.csv].[Branch ID]' />
+          <map key='[Branch ID]' value='[Loan transactions Data.csv+].[Branch ID]' />
+          <map key='[Customer ID (Customer Data)]' value='[Customer Data].[Customer ID]' />
+          <map key='[Customer ID]' value='[Loan transactions Data.csv+].[Customer ID]' />
+          <map key='[Customer Name]' value='[Customer Data].[Customer Name]' />
+          <map key='[Employee Count]' value='[Branch Data.csv].[Employee Count]' />
+          <map key='[Home City]' value='[Customer Data].[Home City]' />
+          <map key='[Home State]' value='[Customer Data].[Home State]' />
+          <map key='[Interest rate]' value='[Loan transactions Data.csv+].[Interest rate]' />
+          <map key='[Lead source]' value='[Loan transactions Data.csv+].[Lead source]' />
+          <map key='[Loan Amount]' value='[Loan transactions Data.csv+].[Loan Amount]' />
+          <map key='[Location type]' value='[Branch Data.csv].[Location type]' />
+          <map key='[Marital Status]' value='[Customer Data].[Marital Status]' />
+          <map key='[Number of dependents]' value='[Customer Data].[Number of dependents]' />
+          <map key='[Postal Code]' value='[Customer Data].[Postal Code]' />
+          <map key='[Region]' value='[Branch Data.csv].[Region]' />
+          <map key='[Risk Level]' value='[Customer Data].[Risk Level]' />
+          <map key='[Table Name]' value='[Loan transactions Data.csv+].[Table Name]' />
+          <map key='[Term of Loan]' value='[Loan transactions Data.csv+].[Term of Loan]' />
+          <map key='[Transaction ID]' value='[Loan transactions Data.csv+].[Transaction ID]' />
+          <map key='[Type of Branch]' value='[Branch Data.csv].[Type of Branch]' />
+          <map key='[Type of Loan]' value='[Loan transactions Data.csv+].[Type of Loan]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I794:no:A1:I794:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Transaction ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Transaction ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Application Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Application Date]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Application Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Approval date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Approval date]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Approval date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type of Loan</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type of Loan]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Type of Loan</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Customer ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Branch ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Branch ID]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Branch ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Loan Amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Loan Amount]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Loan Amount</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Term of Loan</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Term of Loan]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Term of Loan</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Interest rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Interest rate]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Interest rate</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lead source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Lead source]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Lead source</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Table Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Table Name]</local-name>
+            <parent-name>[Loan transactions Data.csv+]</parent-name>
+            <remote-alias>Table Name</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Branch ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Branch ID (Branch Data.csv)]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Branch ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employee Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Employee Count]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Employee Count</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type of Branch</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type of Branch]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Type of Branch</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location type]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Location type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Branch Data.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer ID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer ID (Customer Data)]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Customer ID</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Customer Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Customer Name]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Customer Name</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Marital Status</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Marital Status]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Marital Status</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of dependents</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of dependents]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Number of dependents</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Home City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Home City]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Home City</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Home State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Home State]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Home State</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Postal Code</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Postal Code]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Postal Code</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Risk Level</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Risk Level]</local-name>
+            <parent-name>[Customer Data]</parent-name>
+            <remote-alias>Risk Level</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Home City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[Home State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Postal Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column datatype='integer' name='[Transaction ID]' role='dimension' type='ordinal' />
+      <column caption='Branch Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Branch Data.csv_20F067694E734B04B233F434909D851D]' role='measure' type='quantitative' />
+      <column caption='Customer Data' datatype='table' name='[__tableau_internal_object_id__].[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]' role='measure' type='quantitative' />
+      <column caption='Loan transactions Data.csv' datatype='table' name='[__tableau_internal_object_id__].[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_168a70j06oocb21apsrxi13zetrr.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/21/2025 09:10:41 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A' table='[Extract].[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]' type='table' />
+            <relation name='Branch Data.csv_20F067694E734B04B233F434909D851D' table='[Extract].[Branch Data.csv_20F067694E734B04B233F434909D851D]' type='table' />
+            <relation name='Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644' table='[Extract].[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Age]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Age]' />
+            <map key='[Application Date]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Application Date]' />
+            <map key='[Approval date]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Approval date]' />
+            <map key='[Branch ID (Branch Data.csv)]' value='[Branch Data.csv_20F067694E734B04B233F434909D851D].[Branch ID]' />
+            <map key='[Branch ID]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Branch ID]' />
+            <map key='[Customer ID (Customer Data)]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Customer ID]' />
+            <map key='[Customer ID]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Customer ID]' />
+            <map key='[Customer Name]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Customer Name]' />
+            <map key='[Employee Count]' value='[Branch Data.csv_20F067694E734B04B233F434909D851D].[Employee Count]' />
+            <map key='[Home City]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Home City]' />
+            <map key='[Home State]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Home State]' />
+            <map key='[Interest rate]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Interest rate]' />
+            <map key='[Lead source]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Lead source]' />
+            <map key='[Loan Amount]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Loan Amount]' />
+            <map key='[Location type]' value='[Branch Data.csv_20F067694E734B04B233F434909D851D].[Location type]' />
+            <map key='[Marital Status]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Marital Status]' />
+            <map key='[Number of dependents]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Number of dependents]' />
+            <map key='[Postal Code]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Postal Code]' />
+            <map key='[Region]' value='[Branch Data.csv_20F067694E734B04B233F434909D851D].[Region]' />
+            <map key='[Risk Level]' value='[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644].[Risk Level]' />
+            <map key='[Table Name]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Table Name]' />
+            <map key='[Term of Loan]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Term of Loan]' />
+            <map key='[Transaction ID]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Transaction ID]' />
+            <map key='[Type of Branch]' value='[Branch Data.csv_20F067694E734B04B233F434909D851D].[Type of Branch]' />
+            <map key='[Type of Loan]' value='[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A].[Type of Loan]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Transaction ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Transaction ID]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Transaction ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>793</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Application Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Application Date]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Application Date</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>552</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Approval date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Approval date]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Approval date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>569</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Type of Loan</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Type of Loan]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Type of Loan</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Customer ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Customer ID]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Customer ID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>793</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Branch ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Branch ID]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Branch ID</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>641</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Loan Amount</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Loan Amount]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Loan Amount</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>791</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Term of Loan</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Term of Loan]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Term of Loan</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Interest rate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Interest rate]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Interest rate</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>157</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lead source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Lead source]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Lead source</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Table Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Table Name]</local-name>
+              <parent-name>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</parent-name>
+              <remote-alias>Table Name</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Loan transactions Data.csv+</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Branch ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Branch ID (Branch Data.csv)]</local-name>
+              <parent-name>[Branch Data.csv_20F067694E734B04B233F434909D851D]</parent-name>
+              <remote-alias>Branch ID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Branch Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1862</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Employee Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Employee Count]</local-name>
+              <parent-name>[Branch Data.csv_20F067694E734B04B233F434909D851D]</parent-name>
+              <remote-alias>Employee Count</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Branch Data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Type of Branch</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Type of Branch]</local-name>
+              <parent-name>[Branch Data.csv_20F067694E734B04B233F434909D851D]</parent-name>
+              <remote-alias>Type of Branch</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Branch Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Location type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Location type]</local-name>
+              <parent-name>[Branch Data.csv_20F067694E734B04B233F434909D851D]</parent-name>
+              <remote-alias>Location type</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Branch Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Region]</local-name>
+              <parent-name>[Branch Data.csv_20F067694E734B04B233F434909D851D]</parent-name>
+              <remote-alias>Region</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Branch Data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Branch Data.csv_20F067694E734B04B233F434909D851D]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Customer ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Customer ID (Customer Data)]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Customer ID</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>793</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Customer Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Customer Name]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Customer Name</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>793</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Marital Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Marital Status]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Marital Status</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Customer Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>53</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of dependents</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Number of dependents]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Number of dependents</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Customer Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Home City</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Home City]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Home City</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>252</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Home State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Home State]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Home State</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Postal Code</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Postal Code]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Postal Code</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Customer Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>314</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Risk Level</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Risk Level]</local-name>
+              <parent-name>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</parent-name>
+              <remote-alias>Risk Level</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Customer Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RIN_S2' />
+              <object-id>[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Branch Data.csv' id='Branch Data.csv_20F067694E734B04B233F434909D851D'>
+            <properties context=''>
+              <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='Branch Data.csv' table='[Branch Data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Branch ID' ordinal='0' />
+                  <column datatype='integer' name='Employee Count' ordinal='1' />
+                  <column datatype='string' name='Type of Branch' ordinal='2' />
+                  <column datatype='string' name='Location type' ordinal='3' />
+                  <column datatype='string' name='Region' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Branch Data.csv_20F067694E734B04B233F434909D851D' table='[Extract].[Branch Data.csv_20F067694E734B04B233F434909D851D]' type='table' />
+            </properties>
+          </object>
+          <object caption='Customer Data' id='Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644'>
+            <properties context=''>
+              <relation connection='excel-direct.0vx351l1xwrzzy0zyklqm1lghvbc' name='Customer Data' table='[&apos;Customer Data$&apos;]' type='table'>
+                <columns gridOrigin='A1:I794:no:A1:I794:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Customer ID' ordinal='0' />
+                  <column datatype='string' name='Customer Name' ordinal='1' />
+                  <column datatype='string' name='Marital Status' ordinal='2' />
+                  <column datatype='integer' name='Age' ordinal='3' />
+                  <column datatype='integer' name='Number of dependents' ordinal='4' />
+                  <column datatype='string' name='Home City' ordinal='5' />
+                  <column datatype='string' name='Home State' ordinal='6' />
+                  <column datatype='integer' name='Postal Code' ordinal='7' />
+                  <column datatype='string' name='Risk Level' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644' table='[Extract].[Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644]' type='table' />
+            </properties>
+          </object>
+          <object caption='Loan transactions Data.csv' id='Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A'>
+            <properties context=''>
+              <relation all='true' name='Loan transactions Data.csv+' type='union'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='Transaction ID' />
+                  <column datatype='date' name='Application Date' />
+                  <column datatype='date' name='Approval date' />
+                  <column datatype='string' name='Type of Loan' />
+                  <column datatype='string' name='Customer ID' />
+                  <column datatype='string' name='Branch ID' />
+                  <column datatype='integer' name='Loan Amount' />
+                  <column datatype='integer' name='Term of Loan' />
+                  <column datatype='real' name='Interest rate' />
+                  <column datatype='string' name='Lead source' />
+                  <column datatype='string' name='Table Name' />
+                </columns>
+                <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='Loan transactions Data.csv' table='[Loan transactions Data#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='integer' name='Transaction ID' ordinal='0' />
+                    <column datatype='date' name='Application Date' ordinal='1' />
+                    <column datatype='date' name='Approval date' ordinal='2' />
+                    <column datatype='string' name='Type of Loan' ordinal='3' />
+                    <column datatype='string' name='Customer ID' ordinal='4' />
+                    <column datatype='string' name='Branch ID' ordinal='5' />
+                    <column datatype='integer' name='Loan Amount' ordinal='6' />
+                    <column datatype='integer' name='Term of Loan' ordinal='7' />
+                    <column datatype='real' name='Interest rate' ordinal='8' />
+                    <column datatype='string' name='Lead source' ordinal='9' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.0h1q90414rne3l197f2vj17hdivp' name='bug loan transactions.csv' table='[bug loan transactions#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                    <column datatype='integer' name='Transaction ID' ordinal='0' />
+                    <column datatype='date' name='Application Date' ordinal='1' />
+                    <column datatype='date' name='Approval date' ordinal='2' />
+                    <column datatype='string' name='Type of Loan' ordinal='3' />
+                    <column datatype='string' name='Customer ID' ordinal='4' />
+                    <column datatype='string' name='Branch ID' ordinal='5' />
+                    <column datatype='integer' name='Loan Amount' ordinal='6' />
+                    <column datatype='integer' name='Term of Loan' ordinal='7' />
+                    <column datatype='real' name='Interest rate' ordinal='8' />
+                    <column datatype='string' name='Lead source' ordinal='9' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A' table='[Extract].[Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Branch ID]' />
+              <expression op='[Branch ID (Branch Data.csv)]' />
+            </expression>
+            <first-end-point object-id='Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A' />
+            <second-end-point object-id='Branch Data.csv_20F067694E734B04B233F434909D851D' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[Customer ID]' />
+              <expression op='[Customer ID (Customer Data)]' />
+            </expression>
+            <first-end-point object-id='Loan transactions Data.csv_72460BE5D931424A8F7ED8186799CF2A' />
+            <second-end-point object-id='Customer Data_C52F82E0CAEB47A3A7DDC980ABBD3644' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='Data for Bar chart' inline='true' name='federated.09t24440c2d5gs1bbjnr10qqfiw0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Data for Bar chart' name='textscan.09yvwth05f0wkx1gy1w2k1nzkdp4'>
+            <connection class='textscan' directory='C:/Users/HP/OneDrive/Desktop/Tableau/GitHub/Data/2' filename='Data for Bar chart.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.09yvwth05f0wkx1gy1w2k1nzkdp4' name='Data for Bar chart.csv' table='[Data for Bar chart#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='integer' name='PassengerId' ordinal='0' />
+            <column datatype='string' name='Passenger Name' ordinal='1' />
+            <column datatype='string' name='Embarked' ordinal='2' />
+            <column datatype='integer' name='Survived' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Data for Bar chart.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PassengerId</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PassengerId]</local-name>
+            <parent-name>[Data for Bar chart.csv]</parent-name>
+            <remote-alias>PassengerId</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Passenger Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Passenger Name]</local-name>
+            <parent-name>[Data for Bar chart.csv]</parent-name>
+            <remote-alias>Passenger Name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Embarked</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Embarked]</local-name>
+            <parent-name>[Data for Bar chart.csv]</parent-name>
+            <remote-alias>Embarked</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Survived</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Survived]</local-name>
+            <parent-name>[Data for Bar chart.csv]</parent-name>
+            <remote-alias>Survived</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Passenger Id' datatype='integer' name='[PassengerId]' role='dimension' type='ordinal' />
+      <column caption='Data for Bar chart.csv' datatype='table' name='[__tableau_internal_object_id__].[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_1qek3jg1yg4qze17a0k4k11m1h4x.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/21/2025 10:13:10 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>PassengerId</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PassengerId]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PassengerId</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Data for Bar chart.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>891</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Passenger Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Passenger Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Passenger Name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Data for Bar chart.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>891</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Embarked</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Embarked]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Embarked</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Data for Bar chart.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Survived</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Survived]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Survived</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Data for Bar chart.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Data for Bar chart.csv' id='Data for Bar chart.csv_BB551E94505A446B96C32FB0AB94C724'>
+            <properties context=''>
+              <relation connection='textscan.09yvwth05f0wkx1gy1w2k1nzkdp4' name='Data for Bar chart.csv' table='[Data for Bar chart#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='PassengerId' ordinal='0' />
+                  <column datatype='string' name='Passenger Name' ordinal='1' />
+                  <column datatype='string' name='Embarked' ordinal='2' />
+                  <column datatype='integer' name='Survived' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Line chart' inline='true' name='federated.09kd6ti0htcuv917shkhy1tnw95n' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Line chart' name='textscan.1gf211w11qldhg1dd31z21t28w6w'>
+            <connection class='textscan' directory='C:/Users/HP/OneDrive/Desktop/Tableau/GitHub/Data/2' filename='Line chart.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1gf211w11qldhg1dd31z21t28w6w' name='Line chart.csv' table='[Line chart#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='date' name='Date ' ordinal='0' />
+            <column datatype='integer' name='Sales' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Line chart.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date </remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date ]</local-name>
+            <parent-name>[Line chart.csv]</parent-name>
+            <remote-alias>Date </remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[Line chart.csv]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Date' datatype='date' name='[Date ]' role='dimension' type='ordinal' />
+      <column caption='Line chart.csv' datatype='table' name='[__tableau_internal_object_id__].[Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_1225cwh1ynxnuy1gxkyfp13ypavt.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/21/2025 10:18:43 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date </remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date ]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date </remote-alias>
+              <ordinal>0</ordinal>
+              <family>Line chart.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>365</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sales</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Sales]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sales</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Line chart.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>360</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Line chart.csv' id='Line chart.csv_2BB7FB16B58849789F1A18AEFFD3E13A'>
+            <properties context=''>
+              <relation connection='textscan.1gf211w11qldhg1dd31z21t28w6w' name='Line chart.csv' table='[Line chart#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='date' name='Date ' ordinal='0' />
+                  <column datatype='integer' name='Sales' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='Scatterplot' inline='true' name='federated.0b52m9802af0ud1aolqaw04huclq' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Scatterplot' name='textscan.13umsqb078cc011gfl84w1d3cs0r'>
+            <connection class='textscan' directory='C:/Users/HP/OneDrive/Desktop/Tableau/GitHub/Data/2' filename='Scatterplot.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.13umsqb078cc011gfl84w1d3cs0r' name='Scatterplot.csv' table='[Scatterplot#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='string' name='Month' ordinal='0' />
+            <column datatype='integer' name='Marketing emails' ordinal='1' />
+            <column datatype='integer' name='Sales' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Scatterplot.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[Scatterplot.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Marketing emails</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Marketing emails]</local-name>
+            <parent-name>[Scatterplot.csv]</parent-name>
+            <remote-alias>Marketing emails</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[Scatterplot.csv]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Scatterplot.csv' datatype='table' name='[__tableau_internal_object_id__].[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/HP/AppData/Local/Temp/TableauTemp/#TableauTemp_0yfi2vu1rfyctu158ysje1drwhen.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='01/21/2025 10:22:05 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Month</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Month</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Scatterplot.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Marketing emails</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Marketing emails]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Marketing emails</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Scatterplot.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sales</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Sales]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sales</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Scatterplot.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='Scatterplot.csv' id='Scatterplot.csv_7A8C57D186CF49749180A661CE104C4A'>
+            <properties context=''>
+              <relation connection='textscan.13umsqb078cc011gfl84w1d3cs0r' name='Scatterplot.csv' table='[Scatterplot#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Month' ordinal='0' />
+                  <column datatype='integer' name='Marketing emails' ordinal='1' />
+                  <column datatype='integer' name='Sales' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Bar Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>No. of Passengers vs Survival</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Data for Bar chart' name='federated.09t24440c2d5gs1bbjnr10qqfiw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09t24440c2d5gs1bbjnr10qqfiw0'>
+            <column caption='Passenger Id' datatype='integer' name='[PassengerId]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Survived]' role='measure' type='quantitative' />
+            <column-instance column='[PassengerId]' derivation='Count' name='[cnt:PassengerId:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Survived]' derivation='None' name='[none:Survived:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.09t24440c2d5gs1bbjnr10qqfiw0].[cnt:PassengerId:qk]</rows>
+        <cols>[federated.09t24440c2d5gs1bbjnr10qqfiw0].[none:Survived:ok]</cols>
+      </table>
+      <simple-id uuid='{E5584616-5C4D-4D38-83FA-93A27188FF1F}' />
+    </worksheet>
+    <worksheet name='Line Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Sales vs Months</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Line chart' name='federated.09kd6ti0htcuv917shkhy1tnw95n' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09kd6ti0htcuv917shkhy1tnw95n'>
+            <column caption='Date' datatype='date' name='[Date ]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Date ]' derivation='Month' name='[mn:Date :ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.09kd6ti0htcuv917shkhy1tnw95n].[mn:Date :ok]' value='79' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09kd6ti0htcuv917shkhy1tnw95n].[sum:Sales:qk]</rows>
+        <cols>[federated.09kd6ti0htcuv917shkhy1tnw95n].[mn:Date :ok]</cols>
+      </table>
+      <simple-id uuid='{453202A2-70AB-4976-9696-F5AD466DD201}' />
+    </worksheet>
+    <worksheet name='Scatter Plot'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Marketing emails vs Sales</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Scatterplot' name='federated.0b52m9802af0ud1aolqaw04huclq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0b52m9802af0ud1aolqaw04huclq'>
+            <column datatype='integer' name='[Marketing emails]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Marketing emails]' derivation='None' name='[none:Marketing emails:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sales]' derivation='None' name='[none:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0b52m9802af0ud1aolqaw04huclq].[none:Marketing emails:qk]' field-type='quantitative' max='1000' min='0' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0b52m9802af0ud1aolqaw04huclq].[none:Sales:qk]' field-type='quantitative' max='100' min='0' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='817' />
+                <format attr='maxwidth' value='817' />
+                <format attr='minheight' value='404' />
+                <format attr='maxheight' value='404' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0b52m9802af0ud1aolqaw04huclq].[none:Marketing emails:qk]</rows>
+        <cols>[federated.0b52m9802af0ud1aolqaw04huclq].[none:Sales:qk]</cols>
+      </table>
+      <simple-id uuid='{BC1B6CDA-5436-428F-ADA0-2FFC5E3400CD}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='141'>
+    <window class='worksheet' name='Bar Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.09t24440c2d5gs1bbjnr10qqfiw0].[none:PassengerId:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{224A8480-34D5-4725-A0DC-0D94BD5B4217}' />
+    </window>
+    <window class='worksheet' name='Line Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.09kd6ti0htcuv917shkhy1tnw95n].[yr:Date :ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{130CE45B-9519-42C0-B5A9-8F89396B8D43}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Scatter Plot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{40801DE0-C4DC-4304-98F0-1CA6ED278146}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Bar Chart' width='192'>
+      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
+      GE0BiNH+H9Xxkp0IwpqaAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Line Chart' width='192'>
+      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
+      AAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Scatter Plot' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAAT6ElEQVR4nO3dWWxc133H8e+9s3E27rtIiqQWihIpiZK12LLkJXaTJoDrBgUKpGgRFEXT
+      PrWvfS+KPhYBii7oU+ogSR3UaDbAsWPZliiJIkWKEinuFHdyZsjhzHCGnO3e2wfZsq1E4kiZ
+      jbr/z5NGGPH8h7q/e+6ce865imEYBkKYlFroAoQoJAmAMDVroQvQdR1N0yiWKzFd11HVwp4X
+      pIYvGIaBoig5+/lKsXwHSKfTWCyWnH7YTCSTSex2u9RQBDV8fnK02Ww5ayNrEY9Hg6yHtwHQ
+      UztM3LvHRmQHgOimj7GJaRJpA8PQWZ2fYnbJn62mhXhmWQlAfHOVm9evMbYQAAyGb/bhrKjg
+      7tAgO7EQQyMzlDkNBoYnCC/dYy6kklobZ9K/k43mhXhmWQlASUUD5051YbMowA5JtZLm+gZa
+      PCWshDeorGujsbkVZzLGwnKMo8cPcPDEUcLzy9loXohnloNvOQqGoQMGBgYKYBg6xmd/o2Cg
+      GwYYOkaBr/eFyMoo0E4kyOLiCoGggr+hAo81wujkJP5oigsVtfRPDzGR8pN2V3C4VmOw7w4e
+      bYPaYxey0bwQzywro0DxaAh/MAKAu6ySSo+d1TU/3spavE478WiYjUic2rparCqENnykVBe1
+      laUPf4aMAkkNj8rHKJAMgz6iGP7jpYYH9tQwqBB7kQRAmJoEQJiaBECYmgRAmFoOAmAQC67S
+      e/UqC74QhmEQWJzi2o0BIjtpDC3F+PBNbo3OoBfF+JMws+wHQNuh/+48Z86dYebuLSKRdSaW
+      o/QcbWF4eBT/zB2S5QdpsgUZWQhnvXkhnkYO1gM8mOagGwpeXccXi1BV1YDTW4mHRVaDGgfO
+      VeLSYPG2H73Zi6Zp6LqOruvZL+cpaZpGMpmUGoqgBnhwLyCXt6qyHwCLm7Mn2hm6NUg4oVGv
+      WthIJzAMjZRu4LWm2UkZONM7aKodVVVRVVVuhEkNvyUfN8JysiJsbXWZVDKOd99+GqrqWBzv
+      5ePVKSqaOmmt0fnkow9R0Tl58Wu5aF6IjOVkKoRh6BgGKIqCoigYhvGVpW0PmlRQ1S/O9tID
+      SA2P2rM9gKKofPk4/jwIX34tRDGQ+wDC1CQAwtQkAMLUJADC1CQAwtQkAMLUJADC1CQAwtQk
+      AMLUJADC1HIyHXp+/Daza2EsrkounD7KxO1+fJE4rZ2naCmHa9cHSCklnH/5Aq6Cb9AuzCwH
+      PUCKxbUYFy9ewpOKEAiusWOr5pWXz7F2f5r58Xvsf+ESLx2vY2RiNfvNC/EUcnD+tVFbpvLx
+      Jx+jW1y0ksblLEW12XEqEI5bOOS1YUtXoc4E0PU6WRAjNTzW3lsQk46yErHx2qvnmenvJZi0
+      ENsOoyXdbBsKjS6N9XCS2lQAw10mC2KkhsfamzvDWd20VFvovXoFn+Flf309HmOTK9cG2Nd+
+      kOYjx1i+3UvfvSBdHXVZb16IpyF7gz6iGM58UsMDe7MHEGIPkQAIU5MACFOTAAhTkwAIU5MA
+      CFOTAAhTkwAIU5MACFOTAAhTy/5kOC3BncFBNreT6LqdMxfPEvfNMbkUovvkCTw2mBwZImat
+      4mRnO6rskigKKPs9gMXB8TMv8srFC7hKFJTtTcYXwvR0NjE0dA//zDDx0nYaLeuMLkay3rwQ
+      TyPjHuDzOXOZTlbb2limpHIfWipGVXUjTm8VXpZYC2q0n63CpSks3fahN3lkPYDU8FhFsx7g
+      B//zM976+mtUlJdm8G6DmdlFDvRcQIkukUwnMQz94QMy4unPH5Bhk/UAUsNjFc326FOzC4xN
+      zrK04uNvv/unVFaUPfH9qcgiO44mvHYF3VvN9p1ervim8TYcprVG59PLl7EYKbovyAMyRGE9
+      cT1APJHgP3/wLrNzS2i6zjdef5kDbc0cOdj2xB9q6DqGoqB+djbXdQ1NM7BaLQ9eaxqGomC1
+      WB7+G+kBpIZHFbwHKHE46O48zPziKsePHuabb1zM6ABVVJUvv0tVLahf+rptscpWEKI4PPFI
+      DIUjuF1O/uHv/oq5xZWCn52FyDZZEvmIYuj6pYYHZEmkEDmW0cX4xvIMO44aJq68R6r2NF9/
+      qQu5GhLPg4x6gJnx26Sii9zfaWB7bYx04e9XCZEVGQWgob6Bn7zzMy597TTe8n1fGdERYi/b
+      9VAe7n2fvrEVDh45xJ0rl0lZrFAUX5uF+P3t+h2gsq6JtpL4w9cOb5Vc/4vnxq4B2Apv4LCX
+      Mje/BIAraaHzUM7rEiIvdg2A012KbnPjdjnRdAO73Yp0AOJ5sWsA2o6cZH6kl8FrH5Fy1eGq
+      jvFiTxdPSsF2cIVbI1NY3NWcO9nB5J0B1sJx2jpP0VwG128MkFKcnL/wIk6ZFSEKKKPDz+db
+      47WLLxCuu8T2VN8u34E1hken6ezqxm53ktwKELNUcunCPvoGJjCcCZp7XqY2Nc/IxBpnjtVn
+      5YMI8SwyCkBz+zE0ewkD7/2QsvZTuyxjTLAZiLCytIh/bZ3DXW24nWVYbA5cikEobuFQmR17
+      uhrlfgBdr5UFMVLDYxXFghiHTeHDK9fxVlbjKrFiGDzhEsiOu9xD57FuKpUBomkrsZ0IWsrD
+      tqHQ4NQIRlLUpNYxXKWyIEZqeKyCT4f+3MzkCAd6LtJUbsNiK9mlB7DSc2w/Vz75FJunkheP
+      NjK1PsCnvcu0HemhuRyuX7/CtFrC+QsynCQKK6PZoDO3PuDH7w/hcTsobTrCX/zx17Fk+W6w
+      9ABSw6OKpgcIb8f587/5e1oqC/sLESLbMgqAvh3m3//ln/CU2Clv6eKvv/MWVpkPJJ4DGV0C
+      GYZObCuMtaQUBR27zZb16RByCSQ1PKpoFsQsTwzwX9//Z8bWk9zovUnhByuFyI6MArC6ssjp
+      U8fZ3omzsrpEEQzXC5EVGQXgSNcpZudXufLeO1QfPCnX/+K5kfGieMPQ0XVQLWpOJsPJdwCp
+      4VFFMwy6FfThC2599kqhdl8Lpc7cFSVEvmQUgPmxPq5PRfE6NObmfLhKK/nu9/6SUpnJKfa4
+      jA7hRDzB0RcucqLJznu/uExnvY3gNpRmsk+uEEUsowB0nXmFX/3q17w7kObY2dfxahEavY9/
+      f3B5hrvTS1BSzstnugmvzTG+GOJEzwlcVpgeHSJmq+ZER6ssrxQFlVEAdmIRNNWKs8SKb22F
+      06+ex/KEA3d6McCFS5ewKgqp2Aajc5ucPtbEwOAoR6rTxDyt1CVmGFmqpLtZuhFROJl9B5gZ
+      p669m4ZyBzand9fHGrmtKa5d6aW0tIqGBgcVVQ24Sitxawus+NO0vViNJw0Lgz6QAIgCyigA
+      SirO+x+8i9Nuo3x/N9/7zltYHxsCjaYDJ+gsc3Pnai+ppoPEYiFSCTdx1UqLV8e/vo2S8mGt
+      qMveJxHiGewagLHBq1hqD3PhvBsAV2Xjrj1A2L/A8J0NXNX7aKysI+n3cb3/LoeO9VDrgcGB
+      W/hUD2fOVGflQwjxrHa9ETZ7bxDd5mF1zQdASVktp7s7sv50R7kRJjU8qigmw7UfPYUR36Dr
+      zEUuXryALRVBl53hxHNi10ug0OIIP/rxu5Q1j+G1pUnY6+k+lY/ShMi9XQPgqW3n7be/jWYv
+      pbquicoy9xOHQIXYS3a9BLI6XHjtOh///If4NSfXr1wjLZdA4jmR0cTmYHCdk8ePsRUOsby2
+      RnE8VEmI319GAeg8eZ71UJShD39Gx+mXnnAPQIi9JaMALN2f4eilP+HP3nqZ6bE7aNIDiOdE
+      RgFoPdLF+Mc/4qeXJ3jzzTeyvieQEIWy6yjQr3/yb/RPB0lth0nZtvjpz60PpkJICMRzIKMl
+      kUvTYzjq2qjxluSsELkTLDU8qijuBAMYO+u8/5trbIZCRKLbGY0CRQJz3Bq5j2HorMyOcfVa
+      H8FoAj2d4O6tG9y8PS5PmxQFl1EA4okk67O3+e933uH/Pri2+1QIPc69e9NshsIkYkHm1pOc
+      OX6Q0ZFxfNN3UOs7aS/dYWRuMwsfQYhnl9F06OrGZlzWISKJJNuJxJPfbBhMjdyhtauHqckl
+      EokYFRX1ONxleJnDFzI40FGGS2tl7nYAvbVMng8gNTxWUTwfYHJ0mGMdTaiH/5DozO0nPh5J
+      T25xfymAYyPEzFyAmuoXSKQMDEMjoRuU29JsJ3Wc6SiapUSeDyA1PFbRbItSWdOI7nDyvz/+
+      D7wNB3n9CQ/IUB2l/ME3vwWpLeyuOQ63tTJw7SofXZ6itrWb1mqDTy5/iIHCC6+8nr1PIsQz
+      2HUUSEun0T97i5ZOo1pt2KxW2RxXasi5ougB3vnXfyTubsFhVVEUBU99O2+/eVFmhIrnwq4B
+      ePNb36ZveIKUrlDT0ExrW1vWV4MJUSi7DoM2HjzOH739NqeOtDA5dIVf/OaGzAUSz41de4Bf
+      /fD7DM7v0NbRzWvf/DYeT5lc/ojnxq49QEVNI8376klHA1y/eoXrt8dkTbB4bmS8PXquySiQ
+      1PCoopkLJMTzSgIgTE0CIExNAiBMTQIgTC0HDzkymLrbz0pwmyROXr3Qw72BPjZiCZo7TtNW
+      BZ9eHSCNjZdeewWPbDEhCihnw6B6OsnQ9X4aOprxBdKcPNJI380Rqu1JXJ3nqUkvMDhn49zx
+      fYAMg0oNv60oJsM9i3Q0wKd9Q6RtFbQrOiV2N4rFSomisJWyUu9SUdNlWBKBhx9SFsRIDb9L
+      USyIeTo6KdXDq6+/wczNqwQSVraiQdJxJzFDpdmTxrexQ21yFaW0RhbESA2PtUd7AIPlmTGW
+      g1vYXJW80FDPYshP781hDh07RZ3X4FZ/Pyuqm7Nna7LfvBBPQaZCPKIYznxSwwMyFUKIHJMA
+      CFOTAAhTkwAIU5MACFOTAAhTkwAIU5MACFOTAAhTkwAIU8tJAKLBVa5dvcLQ2H10Q2dtbpyr
+      12+yGUuia0lGB2/QPzwhG2yJgstJACKxJKfPv4SysYRv08+ML84L3e2M3B3DN30Ho/YIrZ4o
+      I3OhXDQvRMZysh6gsamF4Np9tqweWrQ4lZUNlLjL8TKPb1PnwOFyXFo787f96PtLZT2A1PBY
+      e3A9APjm7rEQtfPi2ZMkQsskUvGHD8gos6XZThrygAypYVd7dD1AksHBUZzVdfReCXL6/HES
+      gWt8tDpJzf4uWmsMPrn8AQCnL30t+80L8RRkPcAjiuHMJzU8IOsBhMgxCYAwNQmAMDUJgDA1
+      CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDA1CYAwtZzMBt0JrfFxbz89F79BvUfhzsAN1qMJWjpO
+      0VoJV3sHSOHgpVcv4c5JBUJkJieHXyylcrilmqRmsB0OkHY18NqpfdzoHwVfgkMvvU5NaoGh
+      eyucO96YixKEyEhOAlBdU0vUPwtAWk/idHhQrFacCmwlrdS7LFjS5fKADKlhV3tyQcyX2a1O
+      tmKbpBMuYoZKkyeFPxinNrkG3ipZECM1PNYenQ6tMXWnn/E5P2O3rhG1VFBhidHbN8T+Q4do
+      OtxFYLSPwZkYXYdqs9+8EE9BFsQ8ohjOfFLDA3u0BxBi75AACFOTAAhTkwAIU5MACFOTAAhT
+      y/tMnHhomY9vjKIYBqdeeYMalyXfJQjxUN4DsDQ1z6nX36QytcytiWVqelryXYIQD+X9Eiip
+      WXHaFBSHG4sWz3fzQnxF3nuAqgqV+aUQtYlZbNUH8t28EF+R9x6g5uBx1PUJFra9dO0vz3fz
+      QnxF3nsA1WLnaM+5fDcrxO9U8MlwX14PoKqFH5XVNA2LpbAjU1LDF3J9XBR8QWKxrQcAcjr7
+      UGrInGEYaJqG1Zq7w7Twp1whCqjgl0BCFJL0AMLUii4AWiqO3+cnntLy1qahpwlHog/+bOiE
+      gwE2I7G8tQ8GO9Ewa5997s9rCOa1BkjuRPGtrRHa2sYwPnvtD5DK9wOdDZ3w5iYpTcfQ02wE
+      /ERiiZw0VVwBMNIMD/SzFlijf2CYdB5+73pqh+HBAX7T2wdAaHmC4cklJob6WImkcl8AkNqJ
+      Mj45xebGKv237hFamWR4YpHJoT6Ww/mpAQz8q0tshkLc7usjGN1ioL+fwNoiA3emyGcEtjdX
+      +OUvf81GLMnixDAzSz5uD9wkHM/+SbGoAqDFo6ScVXQf66bSmSKWgw/8KMXqoLvnLNXeByMe
+      q0shTpw9yYmew/gX1nLePoC1xMPJntPsq63EbrOysrjJibM9nDzVgW9+NS81gEJjSztVFR5s
+      jhL0ZAhXeRvHuk/g2AmRrw1SDC3J6MQyxzrbAY31kMbxk110NFezsRnJentFFQAMA1VVURQF
+      VVXyctZRFBWL5Ytfg46KRVFQFAsY+dmnSFFgZWaUewthTpzoAFRUVUFRrSh5qgHASCfw+TdA
+      hbSuo6gWFEBV8vN/AXB/+AbrSZ3lxQWm55ZQFBUVBVW1YOSgiqIKgFriJh0O4Av4WA9ruBy5
+      L0/X0kS3tkjEE0S3d6iptjM5ucT9iWlKG/KzbUs85GMmkOTowf3oqRQ1NQ4mJxa5Pz5JaWNd
+      XmqANGv+EE0tbXiUBHHdTSQ4T8C/TERx4MhTFfs6T/PiiU7qa6qpr6nBU5JifsnH3PIaZV5v
+      1tsrumHQZCzExMwizQc7KHflfluO1M4W4xNTpHSwuyvoPNjC0uwEaWcNB5pqct4+QHInxPjY
+      LGnAXV7HodZ6lmYnSDmqOdCcr72TDEKBFeaW/JTW7KN1Xy3bIR+zS0EOHenAacvvuXIrtInN
+      XYpDSTM9OYmzpoWmmrKst1N0ARAin4rqEkiIfJMACFOTAAhTkwAIU5MACFOTAAhTkwAIU5MA
+      CFOTAAhTkwAIU5MACFOTAAhTkwAIU/t/TeVg9cZ7EGQAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
