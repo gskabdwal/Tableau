@@ -5,3 +5,4 @@
 03) Marks Card on Bar & Line Charts and Scatter Plot
 04) Marks Card on Pie & Area Charts and Heatmap
 05) Hierarchy, Treemap and Dual Combination Chart
+06) Group, Histogram and Bubble Chart
