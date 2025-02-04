@@ -6,3 +6,4 @@
 04) Marks Card on Pie & Area Charts and Heatmap
 05) Hierarchy, Treemap and Dual Combination Chart
 06) Group, Histogram and Bubble Chart
+07) Calculated Fields, Filter ( Types - Extract, Data Sorce, Context, dimension, Measure ) and Sort
