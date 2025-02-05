@@ -7,3 +7,4 @@
 05) Hierarchy, Treemap and Dual Combination Chart
 06) Group, Histogram and Bubble Chart
 07) Calculated Fields, Filter ( Types - Extract, Data Sorce, Context, dimension, Measure ) and Sort
+08) Map Chart with Layers
