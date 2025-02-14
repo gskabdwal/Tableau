@@ -8,3 +8,4 @@
 06) Group, Histogram and Bubble Chart
 07) Calculated Fields, Filter ( Types - Extract, Data Sorce, Context, dimension, Measure ) and Sort
 08) Map Chart with Layers
+09) Custom Map Chart
