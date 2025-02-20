@@ -10,3 +10,4 @@
 08) Map Chart with Layers
 09) Custom Map Chart
 10) Blending Geocoded Data
+11) Calculated Field and Quick Table Calculation
