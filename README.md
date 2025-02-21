@@ -11,3 +11,4 @@
 09) Custom Map Chart
 10) Blending Geocoded Data
 11) Calculated Field and Quick Table Calculation
+12) LOD - Fixed, Include and Exclude
