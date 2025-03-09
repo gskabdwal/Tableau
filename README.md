@@ -12,3 +12,4 @@
 10) Blending Geocoded Data
 11) Calculated Field and Quick Table Calculation
 12) LOD - Fixed, Include and Exclude
+13) Analytics Pane - Summarize, Model & Custom
