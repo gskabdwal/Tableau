@@ -13,3 +13,4 @@
 11) Calculated Field and Quick Table Calculation
 12) LOD - Fixed, Include and Exclude
 13) Analytics Pane - Summarize, Model & Custom
+14) Parameters for Top N, Reference Line and LOD( SUM & AVG )
